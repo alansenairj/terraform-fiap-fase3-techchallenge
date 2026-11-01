@@ -66,7 +66,7 @@ resource "aws_secretsmanager_secret" "evaluation" {
 resource "aws_secretsmanager_secret_version" "evaluation" {
   secret_id = aws_secretsmanager_secret.evaluation.id
   secret_string = jsonencode({
-    REDIS_URL       = var.redis_url
+    REDIS_URL = var.redis_url
     # Mesma chave do auth: o evaluation chama /validate no auth-service, que
     # valida contra o MASTER_KEY que ele proprio le. Se forem diferentes, a
     # chamada falha — a "chave de servico" e a master key tem que ser a mesma.

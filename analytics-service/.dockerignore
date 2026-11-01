@@ -1,7 +1,0 @@
-.env
-README.md
-*.md
-__pycache__/
-*.pyc
-.venv/
-requirements.txt
