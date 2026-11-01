@@ -4,10 +4,9 @@ output "state_bucket_name" {
 }
 
 output "backend_config" {
-  description = "Conteúdo sugerido para o backend.hcl da raiz."
+  description = "Conteúdo de terraform/backend.hcl (key fica em environments/dev/backend.tf)."
   value       = <<-EOT
     bucket = "${aws_s3_bucket.state.id}"
-    key    = "${var.project_name}/infra.tfstate"
     region = "${var.aws_region}"
   EOT
 }
